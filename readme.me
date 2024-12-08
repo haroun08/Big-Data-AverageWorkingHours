@@ -1,0 +1,35 @@
+# Census Income Dataset - MapReduce Analysis
+
+This project demonstrates the use of Hadoop MapReduce to analyze the "Census Income" dataset from the [UCI Machine Learning Repository](http://archive.ics.uci.edu). The project includes multiple analyses and leverages combiners and optimized MapReduce workflows.
+
+## Features
+
+### 1. Average Work Hours by Marital Status
+Calculates the average number of work hours per week for each marital status category using a MapReduce approach. The implementation uses:
+- A `NumPair` class for efficient combiner operation.
+- Combiner to reduce intermediate data transfer.
+
+### 2. Educational Level Assessment
+Determines whether the population in the dataset is generally educated. The analysis involves:
+- Processing education-related fields.
+- Defining thresholds for "educated" status.
+
+### 3. Custom MapReduce Workflow
+Includes the flexibility to apply MapReduce to a domain of your choice.
+
+## Dataset
+The dataset used is **Census Income**, available [here](http://archive.ics.uci.edu/ml/datasets/Census+Income). The data includes demographic and employment attributes for over 48,000 individuals.
+
+## Project Workflow
+
+### Prerequisites
+- Hadoop installed and configured.
+- Dataset downloaded from the UCI repository.
+
+### Running the Project
+
+#### Step 1: Data Preparation
+1. Download the dataset from the [UCI Census Income page](http://archive.ics.uci.edu/ml/datasets/Census+Income).
+2. Place the dataset in HDFS:
+   ```bash
+   hdfs dfs -put census_income_data.txt /user/<username>/input/
